@@ -1,3 +1,4 @@
+package Main;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -47,18 +48,18 @@ public class Game {
 		moneyRate = sum;
 	}
 	
-	public static void buy(String type, int pCells, int pMoney, int sc, int s) {
-		if(canBuy(pCells, pMoney, sc, s)) {
-			cells -= pCells;
-			money -= pMoney;
-			superCell -= sc;
-			space -= s;
+	public static void buy(String type, Price p) {
+		if(canBuy(p)) {
+			cells -= p.getCells();
+			money -= p.getMoney();
+			superCell -= p.getSuperCell();
+			space -= p.getSpace();
 			addType(type);
 		}
 	}
 	
-	public static boolean canBuy(int pCells, int pMoney, int sc, int s) {
-		if(cells >= pCells && money >= pMoney && superCell >= sc && space >= s)
+	public static boolean canBuy(Price p) {
+		if(cells >= p.getCells() && money >= p.getMoney() && superCell >= p.getSuperCell() && space >= p.getSpace())
 			return true;
 		return false;
 	}

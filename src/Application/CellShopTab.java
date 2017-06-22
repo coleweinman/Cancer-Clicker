@@ -8,6 +8,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.KeyStroke;
 
+import Game.Characters.*;
+
 import javax.swing.Action;
 
 import net.miginfocom.swing.MigLayout;
@@ -24,41 +26,41 @@ public class CellShopTab extends JPanel {
 		setLayout(new MigLayout("insets 0 0 0 0", "[grow][grow][grow][grow][grow][grow]", "[grow][grow,baseline][grow][grow]"));
 
 		
-		JLabel lblCSL1 = new JLabel("<html><center>Brian</center><center>1,000c</center></html>");
+		JLabel lblCSL1 = new JLabel("<html><center>Brian</center><center>" + Brian.getPrice().getCells() + "c</center></html>");
 		lblCSL1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Message.InfoPanel info = new Message.InfoPanel("Brian", "100c", "1c/s");
+				Message.InfoPanelCharacter info = new Message.InfoPanelCharacter("Brian");
 			}
 		});
 		lblCSL1.setFont(new Font("Tahoma", Font.BOLD, 15));
 		add(lblCSL1, "cell 0 0,alignx center,aligny center");
 		
-		JLabel lblCSL2 = new JLabel("<html><center>Garrett</center><center>100c</center></html>");
+		JLabel lblCSL2 = new JLabel("<html><center>Garrett</center><center>" + Garrett.getPrice().getCells() + "c</center></html>");
 		lblCSL2.setFont(new Font("Tahoma", Font.BOLD, 15));
 		add(lblCSL2, "cell 1 0,alignx center,aligny center");
 		
-		JLabel lblCSL3 = new JLabel("<html><center>Noah</center><center>100c</center></html>");
+		JLabel lblCSL3 = new JLabel("<html><center>Noah</center><center>" + Noah.getPrice().getCells() + "c</center></html>");
 		lblCSL3.setFont(new Font("Tahoma", Font.BOLD, 15));
 		add(lblCSL3, "cell 4 0,alignx center,aligny center");
 		
-		JLabel lblCSL4 = new JLabel("<html><center>Andrew</center><center>100c</center></html>");
+		JLabel lblCSL4 = new JLabel("<html><center>Andrew</center><center>" + Andrew.getPrice().getCells() + "c</center></html>");
 		lblCSL4.setFont(new Font("Tahoma", Font.BOLD, 15));
 		add(lblCSL4, "cell 5 0,alignx center,aligny center");
 		
-		JLabel lblCSL5 = new JLabel("<html><center>Daniel</center><center>100c</center></html>");
+		JLabel lblCSL5 = new JLabel("<html><center>Daniel</center><center>" + Daniel.getPrice().getCells() + "c</center></html>");
 		lblCSL5.setFont(new Font("Tahoma", Font.BOLD, 15));
 		add(lblCSL5, "cell 0 2,alignx center,aligny center");
 		
-		JLabel lblCSL6 = new JLabel("<html><center>Amine</center><center>100c</center></html>");
+		JLabel lblCSL6 = new JLabel("<html><center>Amine</center><center>" + Amine.getPrice().getCells() + "c</center></html>");
 		lblCSL6.setFont(new Font("Tahoma", Font.BOLD, 15));
 		add(lblCSL6, "cell 1 2,alignx center,aligny center");
 		
-		JLabel lblCSL7 = new JLabel("<html><center>Chris</center><center>100c</center></html>");
+		JLabel lblCSL7 = new JLabel("<html><center>Chris</center><center>" + Chris.getPrice().getCells() + "c</center></html>");
 		lblCSL7.setFont(new Font("Tahoma", Font.BOLD, 15));
 		add(lblCSL7, "cell 4 2,alignx center,aligny center");
 		
-		JLabel lblCSL8 = new JLabel("<html><center>Tinky</center><center>100c</center></html>");
+		JLabel lblCSL8 = new JLabel("<html><center>Tinky</center><center>" + Tinky.getPrice().getCells() + "c</center></html>");
 		lblCSL8.setFont(new Font("Tahoma", Font.BOLD, 15));
 		add(lblCSL8, "cell 5 2,alignx center,aligny center");
 		

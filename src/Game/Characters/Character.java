@@ -1,6 +1,8 @@
 package Game.Characters;
 
-public class Character {
+import Main.Price;
+
+public abstract class Character {
 	
 	private String type = "";
 	private int cellRate = 0;
@@ -8,13 +10,11 @@ public class Character {
 	private boolean puppet = false;
 	private double superCellMult = 0;
 	private int space = 0;
-	
-	public Character() {
-		
-	}
-	
-	public Character(String t) {
+	private static Price price = new Price(0,0,0,0);
+
+	public Character(String t, Price p) {
 		type = t;
+		price = p;
 	}
 	
 	public String getType() {
@@ -31,8 +31,20 @@ public class Character {
 		return cellRate;
 	}
 	
+	public int getSpace() {
+		return space;
+	}
+	
+	public double getSuperCellMult() {
+		return superCellMult;
+	}
+	
 	public int getMoneyRate() {
 		return moneyRate;
+	}
+	
+	public static Price getPrice() {
+		return price;
 	}
 	
 	public boolean isPuppet() {
@@ -43,6 +55,10 @@ public class Character {
 		cellRate = i;
 	}
 	
+	public void setSuperCellMult(double m) {
+		superCellMult = m;
+	}
+	
 	public void setMoneyRate(int i) {
 		moneyRate = i;
 	}
@@ -50,4 +66,9 @@ public class Character {
 	public void setPuppet(boolean b) {
 		puppet = b;
 	}
+	
+	public void setPrice(Price p) {
+		price = p;
+	}
 }
+
