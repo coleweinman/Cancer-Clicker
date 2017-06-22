@@ -10,11 +10,10 @@ public abstract class Character {
 	private boolean puppet = false;
 	private double superCellMult = 0;
 	private int space = 0;
-	private static Price price = new Price(0,0,0,0);
+	private static Price price;
 
-	public Character(String t, Price p) {
+	public Character(String t) {
 		type = t;
-		price = p;
 	}
 	
 	public String getType() {

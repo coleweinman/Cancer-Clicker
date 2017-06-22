@@ -1,11 +1,12 @@
 package Game.Characters;
 
-import Main.Price;
+import Game.Data;
 
 public class Tinky extends Character {
 	
 	public Tinky() {
-		super("Tinky", new Price(1000000,0,10,0));
-		setCellRate(1);
+		super("Tinky");
+		setCellRate(Data.Tinky.getCellRate());
+		setPrice(Data.Tinky.getPrice());
 	}
 }
