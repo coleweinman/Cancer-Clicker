@@ -11,6 +11,8 @@ import javax.swing.KeyStroke;
 import javax.swing.Action;
 
 import net.miginfocom.swing.MigLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 
 
@@ -23,6 +25,12 @@ public class CellShopTab extends JPanel {
 
 		
 		JLabel lblCSL1 = new JLabel("<html><center>Brian</center><center>1,000c</center></html>");
+		lblCSL1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Message.InfoPanel info = new Message.InfoPanel("Brian", "100c", "1c/s");
+			}
+		});
 		lblCSL1.setFont(new Font("Tahoma", Font.BOLD, 15));
 		add(lblCSL1, "cell 0 0,alignx center,aligny center");
 		
@@ -56,7 +64,6 @@ public class CellShopTab extends JPanel {
 		
 		for(int i = 0; i < btnBuy.length; i++) {
 			btnBuy[i] = new JButton("Buy");
-			btnBuy[i].setFocusable(false);
 			btnBuy[i].setFont(new Font("Tahoma", Font.BOLD, 14));
 		}
 		

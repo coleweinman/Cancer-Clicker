@@ -30,7 +30,6 @@ public class Application extends JFrame {
 
 	private static JPanel contentPane = new JPanel();
 	public static JTabbedPane mainTabbedPane = new JTabbedPane(JTabbedPane.TOP);
-	
 	private static JPanel tabGame = new GameTab();
 	private Action shiftAction = new ShiftAction();
 	private Action unshiftAction = new UnshiftAction();
@@ -38,6 +37,7 @@ public class Application extends JFrame {
 	public Application() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 500, 550);
+		this.setMinimumSize(new Dimension(300,300));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
@@ -54,11 +54,11 @@ public class Application extends JFrame {
 		//Key Bindings
 		
 		//Shift Action
-		getRootPane().getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).put(KeyStroke.getKeyStroke("SHIFT"), "none");
-		getRootPane().getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_Q, 0, false), "Info");
-		getRootPane().getActionMap().put("Info", shiftAction);
-		getRootPane().getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_Q, 0, true), "Buy");
-		getRootPane().getActionMap().put("Buy", unshiftAction);
+		//getRootPane().getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).put(KeyStroke.getKeyStroke("SHIFT"), "none");
+		//getRootPane().getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_Q, 0, false), "Info");
+		//getRootPane().getActionMap().put("Info", shiftAction);
+		//getRootPane().getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_Q, 0, true), "Buy");
+		//getRootPane().getActionMap().put("Buy", unshiftAction);
 		
 	}
 	
