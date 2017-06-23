@@ -5,8 +5,9 @@ import java.util.concurrent.TimeUnit;
 
 import Game.Data;
 import Game.Operation;
-import Game.Characters.Brian;
+import Game.Characters.*;
 import Game.Characters.Character;
+import Game.Characters.Garrett;
 
 public class Game {
 
@@ -14,7 +15,7 @@ public class Game {
 	private static List<Operation> operations = new ArrayList<Operation>();
 	private static int cellRate = 0;
 	private static int moneyRate = 0;
-	private static int cells = 1000;
+	private static int cells = 0;
 	private static int money = 0;
 	private static int superCell = 0;
 	private static int space = 0;
@@ -44,6 +45,7 @@ public class Game {
 
 	private static void increamentDisplay() {
 		Application.GameTab.setCells(cells);
+		Application.GameTab.setCellRate(cellRate);
 	}
 
 	private static void calcCellRate() {
@@ -80,13 +82,13 @@ public class Game {
 	public static void addType(String t) {
 		switch(t) {
 			case "Brian": characters.add(new Brian()); break;
-			//case "Garrett": characters.add(new Garrett()); break;
-			//case "Brian": characters.add(new Brian()); break;
-			//case "Brian": characters.add(new Brian()); break;
-			//case "Brian": characters.add(new Brian()); break;
-			//case "Brian": characters.add(new Brian()); break;
-			//case "Brian": characters.add(new Brian()); break;
-			//case "Brian": characters.add(new Brian()); break;
+			case "Garrett": characters.add(new Garrett()); break;
+			case "Noah": characters.add(new Noah()); break;
+			case "Andrew": characters.add(new Andrew()); break;
+			case "Daniel": characters.add(new Daniel()); break;
+			case "Amine": characters.add(new Amine()); break;
+			case "Chris": characters.add(new Chris()); break;
+			case "Tinky": characters.add(new Tinky()); break;
 		}
 	}
 	
