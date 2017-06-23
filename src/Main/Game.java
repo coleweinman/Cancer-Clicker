@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import Game.Data;
 import Game.Operation;
 import Game.Characters.Brian;
 import Game.Characters.Character;
@@ -13,7 +14,7 @@ public class Game {
 	private static List<Operation> operations = new ArrayList<Operation>();
 	private static int cellRate = 0;
 	private static int moneyRate = 0;
-	private static int cells = 0;
+	private static int cells = 1000;
 	private static int money = 0;
 	private static int superCell = 0;
 	private static int space = 0;
@@ -31,7 +32,18 @@ public class Game {
 		
 			calcCellRate();
 			calcMoneyRate();
+			addValues();
+			increamentDisplay();
 		}
+	}
+
+	private static void addValues() {
+		cells += cellRate;
+		money += money;
+	}
+
+	private static void increamentDisplay() {
+		Application.GameTab.setCells(cells);
 	}
 
 	private static void calcCellRate() {
@@ -48,7 +60,8 @@ public class Game {
 		moneyRate = sum;
 	}
 	
-	public static void buy(String type, Price p) {
+	public static void buy(String type) {
+		Price p = Data.valueOf(type).getPrice();
 		if(canBuy(p)) {
 			cells -= p.getCells();
 			money -= p.getMoney();
@@ -75,5 +88,9 @@ public class Game {
 			//case "Brian": characters.add(new Brian()); break;
 			//case "Brian": characters.add(new Brian()); break;
 		}
+	}
+	
+	public static void addCell(int i) {
+		cells += i;
 	}
 }

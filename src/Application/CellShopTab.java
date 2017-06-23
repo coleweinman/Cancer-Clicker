@@ -11,12 +11,15 @@ import javax.swing.KeyStroke;
 import Game.Data;
 import Game.ShortNumber;
 import Game.Characters.*;
+import Main.Game;
 
 import javax.swing.Action;
 
 import net.miginfocom.swing.MigLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 
@@ -75,11 +78,59 @@ public class CellShopTab extends JPanel {
 		add(btnBuy[7], "cell 5 3,grow");
 		
 		JButton btnCreate = new JButton("Create");
+		btnCreate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Game.addCell(1);
+			}
+		});
 		btnCreate.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		btnCreate.setMargin(new Insets(1,1,1,1));
 		add(btnCreate, "cell 2 0 2 2,grow");
 		
 		//Buy Listeners
+		btnBuy[0].addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Game.buy("Brian");
+			}
+		});
+		btnBuy[1].addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Game.buy("Garrett");
+			}
+		});
+		btnBuy[2].addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Game.buy("Noah");
+			}
+		});
+		btnBuy[3].addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Game.buy("Andrew");
+			}
+		});
+		btnBuy[4].addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Game.buy("Daniel");
+			}
+		});
+		btnBuy[5].addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Game.buy("Amine");
+			}
+		});
+		btnBuy[6].addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Game.buy("Chris");
+			}
+		});
+		btnBuy[7].addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Game.buy("Tinky");
+			}
+		});
+		
+		
+		//Info Listeners
 		
 		lblCSL1.addMouseListener(new MouseAdapter() {
 			@Override
