@@ -1,13 +1,13 @@
 package Game.Characters;
 
-import Game.Data;
+import Game.CharacterData;
 import Main.Price;
 
 public class Garrett extends Character {
 	
 	public Garrett() {
 		super("Garrett");
-		setCellRate(Data.Garrett.getCellRate());
-		setPrice(Data.Garrett.getPrice());
+		setCellRate(CharacterData.Garrett.getCellRate());
+		setPrice(CharacterData.Garrett.getPrice());
 	}
 }

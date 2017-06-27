@@ -1,13 +1,14 @@
 package Game.Characters;
 
-import Game.Data;
+import Game.CharacterData;
 import Main.Price;
 
 public class Brian extends Character {
 	
 	public Brian() {
 		super("Brian");
-		setCellRate(Data.Brian.getCellRate());
-		setPrice(Data.Brian.getPrice());
+		setCellRate(CharacterData.Brian.getCellRate());
+		setPrice(CharacterData.Brian.getPrice());
+		setSpace(getPrice().getSpace());
 	}
 }

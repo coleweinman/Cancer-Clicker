@@ -1,6 +1,6 @@
 package Game.Characters;
 
-import Game.Data;
+import Game.CharacterData;
 import Main.Price;
 
 public class Noah extends Character {
@@ -9,7 +9,7 @@ public class Noah extends Character {
 	
 	public Noah() {
 		super("Noah");
-		setCellRate(Data.Noah.getCellRate());
-		setPrice(Data.Noah.getPrice());
+		setCellRate(CharacterData.Noah.getCellRate());
+		setPrice(CharacterData.Noah.getPrice());
 	}
 }

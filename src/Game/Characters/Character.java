@@ -69,5 +69,8 @@ public abstract class Character {
 	public void setPrice(Price p) {
 		price = p;
 	}
+	
+	public void setSpace(int i) {
+		space = i;
+	}
 }
-

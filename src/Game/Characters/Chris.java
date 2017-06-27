@@ -1,6 +1,6 @@
 package Game.Characters;
 
-import Game.Data;
+import Game.CharacterData;
 import Main.Price;
 
 public class Chris extends Character {
@@ -9,7 +9,7 @@ public class Chris extends Character {
 	
 	public Chris() {
 		super("Chris");
-		setCellRate(Data.Chris.getCellRate());
-		setPrice(Data.Chris.getPrice());
+		setCellRate(CharacterData.Chris.getCellRate());
+		setPrice(CharacterData.Chris.getPrice());
 	}
 }

@@ -25,6 +25,7 @@ import java.awt.FlowLayout;
 import java.awt.TextArea;
 import javax.swing.JTextPane;
 import javax.swing.KeyStroke;
+import javax.swing.SwingConstants;
 
 public class Application extends JFrame {
 
@@ -33,6 +34,7 @@ public class Application extends JFrame {
 	private static JPanel tabGame = new GameTab();
 	private Action shiftAction = new ShiftAction();
 	private Action unshiftAction = new UnshiftAction();
+	private final JLabel lblTitle = new JLabel();
 	
 	public Application() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -42,12 +44,18 @@ public class Application extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		
+		lblTitle.setText("<html><center>CANCER CLICKER v2</center></html>");
+		lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
+		
 		contentPane.add(mainTabbedPane, BorderLayout.CENTER);
 		
 		mainTabbedPane.addTab("Game", null, tabGame, null);
 
 		JPanel tabSettings = new JPanel();
 		mainTabbedPane.addTab("Settings", null, tabSettings, null);
+		lblTitle.setFont(new Font("Tahoma", Font.BOLD, 30));
+		
+		contentPane.add(lblTitle, BorderLayout.NORTH);
 		
 		
 		

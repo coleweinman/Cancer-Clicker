@@ -6,6 +6,12 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
 import net.miginfocom.swing.MigLayout;
+import javax.swing.JSeparator;
+import javax.swing.SwingConstants;
+
+import Game.ShortNumber;
+
+import javax.swing.JButton;
 
 public class GameTab extends JPanel {
 	private JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
@@ -19,39 +25,49 @@ public class GameTab extends JPanel {
 	private final JLabel lblSuperCells = new JLabel("Super Cells");
 	private final static JLabel disSuperCell = new JLabel("0");
 	private final static JLabel disCells = new JLabel("0");
-	private final JLabel lblCancerClickerV = new JLabel("CANCER CLICKER v2");
 	private final JLabel lblCellRate = new JLabel("Cells per Tick");
 	private final static JLabel disCellRate = new JLabel("0");
+	private final JLabel lblSpace = new JLabel("Space");
+	private final static JLabel disSpace = new JLabel("0/0");
+	private final JSeparator sepTop = new JSeparator();
+	private final JSeparator sepBottom = new JSeparator();
 	
 	public GameTab() {
 		super();
-		setLayout(new MigLayout("insets 0 0 0 0", "[grow][grow][grow][grow][grow][grow][grow]", "[grow][grow][grow][grow][grow][grow][grow][grow][][][grow][][grow][grow]"));
-		lblCancerClickerV.setFont(new Font("Tahoma", Font.BOLD, 30));
-		
-		add(lblCancerClickerV, "cell 0 1 7 1,alignx center,aligny center");
+		setLayout(new MigLayout("insets 0 0 0 0", "[grow][grow][grow][grow][grow][grow]", "[grow][grow][][grow][grow][][grow][][][][grow][][grow][grow]"));
 		lblCells.setFont(new Font("Tahoma", Font.BOLD, 30));
 		
-		add(lblCells, "cell 1 3 5 1,alignx center");
+		add(lblCells, "cell 2 0 2 1,alignx center,aligny center");
+		
+		add(sepTop, "cell 0 2 6 1");
 		lblMoney.setFont(new Font("Tahoma", Font.BOLD, 20));
 		
-		add(lblMoney, "cell 0 5 2 1,alignx center,aligny center");
+		add(lblMoney, "cell 0 3 2 1,alignx center,aligny center");
 		lblCellRate.setFont(new Font("Tahoma", Font.BOLD, 20));
 		
-		add(lblCellRate, "cell 3 5 2 1,alignx center,aligny center");
-		lblSuperCells.setFont(new Font("Tahoma", Font.BOLD, 20));
+		add(lblCellRate, "cell 2 3 2 1,alignx center,aligny center");
+		lblSpace.setFont(new Font("Tahoma", Font.BOLD, 20));
 		
-		add(lblSuperCells, "cell 5 5 2 1,alignx center");
+		add(lblSpace, "cell 4 3 2 1,alignx center,aligny center");
 		disMoney.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		
-		add(disMoney, "cell 0 6 2 1,alignx center,aligny center");
+		add(disMoney, "cell 0 4 2 1,alignx center,aligny center");
 		disCellRate.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		
-		add(disCellRate, "cell 3 6 2 1,alignx center,aligny center");
+		add(disCellRate, "cell 2 4 2 1,alignx center,aligny center");
+		disSpace.setFont(new Font("Tahoma", Font.PLAIN, 40));
+		
+		add(disSpace, "cell 4 4 2 1,alignx center,aligny center");
+		
+		add(sepBottom, "cell 0 5 6 1");
+		lblSuperCells.setFont(new Font("Tahoma", Font.BOLD, 20));
+		
+		add(lblSuperCells, "cell 2 6 2 1,alignx center,aligny center");
 		disSuperCell.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		
-		add(disSuperCell, "cell 5 6 2 1,alignx center,aligny center");
+		add(disSuperCell, "cell 2 7 2 1,alignx center,aligny center");
 		
-		add(tabbedPane, "cell 0 8 7 6,grow");
+		add(tabbedPane, "cell 0 8 6 6,grow");
 		
 		tabbedPane.addTab("Cell Shop", tabCellShop);
 
@@ -62,15 +78,20 @@ public class GameTab extends JPanel {
 		tabbedPane.addTab("Operations", tabOperations);
 		
 		disCells.setFont(new Font("Tahoma", Font.PLAIN, 40));
-		add(disCells, "cell 1 4 5 1,alignx center,aligny center");
+		add(disCells, "cell 0 1 6 1,alignx center,aligny center");
 		
 	}
 	
 	public static void setCells(long c) {
-		disCells.setText(new Long(c).toString());
+		String s = (new ShortNumber(c, false)).toString();
+		disCells.setText(s);
 	}
 	
 	public static void setCellRate(long c) {
 		disCellRate.setText(new Long(c).toString());
+	}
+	
+	public static void setSpace(int f, int c) {
+		disSpace.setText(f+"/"+c);
 	}
 }

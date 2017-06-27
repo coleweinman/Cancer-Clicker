@@ -1,13 +1,13 @@
 package Game.Characters;
 
-import Game.Data;
+import Game.CharacterData;
 import Main.Price;
 
 public class Daniel extends Character{
 	
 	public Daniel() {
 		super("Daniel");
-		setCellRate(Data.Daniel.getCellRate());
-		setPrice(Data.Daniel.getPrice());
+		setCellRate(CharacterData.Daniel.getCellRate());
+		setPrice(CharacterData.Daniel.getPrice());
 	}
 }

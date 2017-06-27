@@ -1,13 +1,13 @@
 package Game.Characters;
 
-import Game.Data;
+import Game.CharacterData;
 import Main.Price;
 
 public class Amine extends Character {
 	
 	public Amine() {
 		super("Amine");
-		setCellRate(Data.Amine.getCellRate());
-		setPrice(Data.Amine.getPrice());
+		setCellRate(CharacterData.Amine.getCellRate());
+		setPrice(CharacterData.Amine.getPrice());
 	}
 }
