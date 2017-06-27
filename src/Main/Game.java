@@ -17,7 +17,7 @@ public class Game {
 	private static List<Operation> operations = new ArrayList<Operation>();
 	private static int cellRate = 0;
 	private static int moneyRate = 0;
-	private static int cells = 0;
+	private static int cells = 1000000;
 	private static int money = 0;
 	private static int superCell = 0;
 	private static int spaceCapacity = 0;

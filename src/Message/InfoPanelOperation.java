@@ -27,14 +27,18 @@ public class InfoPanelOperation {
 		lineSC.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		JLabel lineSpace = new JLabel("<html><b>Space: </b>" + d.getSpace() + "</html>");
 		lineSpace.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		JLabel lineMult = new JLabel("<html><b>Super Cell Multiplyer: </b>" + d.getSuperCellMult()/100 + "%</html>");
+		JLabel lineMult = new JLabel("<html><b>Super Cell Multiplyer: </b>" + d.getSuperCellMult() + "%</html>");
 		lineMult.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		JLabel lineCellRate = new JLabel("<html><b>Cell Cost: </b>" + d.getCellCost() + "c/t" + "</html>");
+		JLabel lineCellRate = new JLabel("<html><b>Cell Cost per Tick: </b>" + d.getCellCost() + "c/t" + "</html>");
 		lineCellRate.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		JLabel lineMoneyRate = new JLabel("<html><b>Money Cost: </b>" + d.getMoneyCost() + "m/t" + "</html>");
+		JLabel lineMoneyRate = new JLabel("<html><b>Money Cost per Tick: </b>" + d.getMoneyCost() + "m/t" + "</html>");
 		lineMoneyRate.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		JLabel lineCellMult = new JLabel("<html><b>Cell Production Multiplyer: </b>" + d.getCellMult() + "m/t" + "</html>");
+		lineCellMult.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		JLabel lineMoneyMult = new JLabel("<html><b>Money Production Multiplyer: </b>" + d.getMoneyMult() + "m/t" + "</html>");
+		lineMoneyMult.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		
-		optionPane.setMessage(new Object[] {lineName, lineCells, lineMoney, lineSC, lineSpace, lineMult, lineCellRate, lineMoneyRate});
+		optionPane.setMessage(new Object[] {lineName, lineCells, lineMoney, lineSC, lineSpace, lineMult, lineCellRate, lineMoneyRate, lineCellMult, lineMoneyMult});
 		optionPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
 		JDialog dialog = optionPane.createDialog(frame, name);
 		dialog.setVisible(true);

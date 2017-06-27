@@ -9,5 +9,6 @@ public class Daniel extends Character{
 		super("Daniel");
 		setCellRate(CharacterData.Daniel.getCellRate());
 		setPrice(CharacterData.Daniel.getPrice());
+		setSpace(getPrice().getSpace());
 	}
 }

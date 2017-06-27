@@ -11,5 +11,6 @@ public class Chris extends Character {
 		super("Chris");
 		setCellRate(CharacterData.Chris.getCellRate());
 		setPrice(CharacterData.Chris.getPrice());
+		setSpace(getPrice().getSpace());
 	}
 }

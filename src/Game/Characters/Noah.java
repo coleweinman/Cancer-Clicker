@@ -11,5 +11,6 @@ public class Noah extends Character {
 		super("Noah");
 		setCellRate(CharacterData.Noah.getCellRate());
 		setPrice(CharacterData.Noah.getPrice());
+		setSpace(getPrice().getSpace());
 	}
 }

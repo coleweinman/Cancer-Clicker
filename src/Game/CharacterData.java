@@ -3,9 +3,9 @@ package Game;
 import Main.Price;
 
 public enum CharacterData {
-	Brian(new Price(100,0,0,10),1,0,0),
-	Garrett(new Price(800,0,0,8),2,0,0),
-	Noah(new Price(4000,0,0,6),5,0,0),
+	Brian(new Price(100,0,0,1),1,0,0),
+	Garrett(new Price(800,0,0,5),2,0,0),
+	Noah(new Price(4000,0,0,4),5,0,0),
 	Andrew(new Price(10000,0,0,4),10,0,0),
 	Daniel(new Price(100000,0,0,2),50,0,0),
 	Amine(new Price(500000,0,0,1),100,0,0),

@@ -8,5 +8,6 @@ public class Tinky extends Character {
 		super("Tinky");
 		setCellRate(CharacterData.Tinky.getCellRate());
 		setPrice(CharacterData.Tinky.getPrice());
+		setSpace(getPrice().getSpace());
 	}
 }
