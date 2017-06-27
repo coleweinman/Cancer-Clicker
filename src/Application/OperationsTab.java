@@ -38,9 +38,9 @@ public class OperationsTab extends JPanel {
 		lblInfo[0].setText("<html><center>Box</center><center>" + new ShortNumber(OperationData.Box.getPrice().getCells(), true) + "</center></html>");
 		lblInfo[1].setText("<html><center>Garage</center><center>" + new ShortNumber(OperationData.Garage.getPrice().getCells(), true) + "</center></html>");
 		lblInfo[2].setText("<html><center>Office</center><center>" + new ShortNumber(OperationData.Office.getPrice().getCells(), true) + "</center></html>");
-		lblInfo[3].setText("<html><center>Cole</center><center>" + new ShortNumber(OperationData.Cole.getPrice().getCells(), true) + "</center></html>");
-		lblInfo[4].setText("<html><center>Nhan</center><center>" + new ShortNumber(OperationData.Nhan.getPrice().getCells(), true) + "</center></html>");
-		lblInfo[5].setText("<html><center>School</center><center>" + new ShortNumber(OperationData.School.getPrice().getCells(), true) + "</center></html>");
+		lblInfo[3].setText("<html><center>Cole's Home</center><center>" + new ShortNumber(OperationData.Cole.getPrice().getCells(), true) + "</center></html>");
+		lblInfo[4].setText("<html><center>Nhan's Home</center><center>" + new ShortNumber(OperationData.Nhan.getPrice().getCells(), true) + "</center></html>");
+		lblInfo[5].setText("<html><center>Pearce</center><center>" + new ShortNumber(OperationData.School.getPrice().getCells(), true) + "</center></html>");
 		
 		add(lblInfo[0], "cell 0 0,grow");
 		add(lblInfo[1], "cell 1 0,grow");
@@ -94,42 +94,42 @@ public class OperationsTab extends JPanel {
 		lblInfo[0].addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Message.InfoPanelCharacter info = new Message.InfoPanelCharacter("Brian");
+				Message.InfoPanelOperation info = new Message.InfoPanelOperation("Box");
 			}
 		});
 		
 		lblInfo[1].addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Message.InfoPanelCharacter info = new Message.InfoPanelCharacter("Garrett");
+				Message.InfoPanelOperation info = new Message.InfoPanelOperation("Garage");
 			}
 		});
 		
 		lblInfo[2].addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Message.InfoPanelCharacter info = new Message.InfoPanelCharacter("Noah");
+				Message.InfoPanelOperation info = new Message.InfoPanelOperation("Office");
 			}
 		});
 		
 		lblInfo[3].addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Message.InfoPanelCharacter info = new Message.InfoPanelCharacter("Andrew");
+				Message.InfoPanelOperation info = new Message.InfoPanelOperation("Cole");
 			}
 		});
 		
 		lblInfo[4].addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Message.InfoPanelCharacter info = new Message.InfoPanelCharacter("Daniel");
+				Message.InfoPanelOperation info = new Message.InfoPanelOperation("Nhan");
 			}
 		});
 		
 		lblInfo[5].addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Message.InfoPanelCharacter info = new Message.InfoPanelCharacter("Amine");
+				Message.InfoPanelOperation info = new Message.InfoPanelOperation("School");
 			}
 		});
 	}

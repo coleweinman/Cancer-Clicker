@@ -70,12 +70,12 @@ public class GameTab extends JPanel {
 		add(tabbedPane, "cell 0 8 6 6,grow");
 		
 		tabbedPane.addTab("Cell Shop", tabCellShop);
+		
+		tabbedPane.addTab("Operations", tabOperations);
 
 		tabbedPane.addTab("Money Shop", tabMoneyTab);
 		
 		tabbedPane.addTab("Puppet Panel", tabPuppet);
-		
-		tabbedPane.addTab("Operations", tabOperations);
 		
 		disCells.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		add(disCells, "cell 0 1 6 1,alignx center,aligny center");

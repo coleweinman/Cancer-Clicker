@@ -27,7 +27,7 @@ public class InfoPanelOperation {
 		lineSC.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		JLabel lineSpace = new JLabel("<html><b>Space: </b>" + d.getSpace() + "</html>");
 		lineSpace.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		JLabel lineMult = new JLabel("<html><b>Super Cell Multiplyer: </b>" + "+" + d.getSuperCellMult()/100 + "%</html>");
+		JLabel lineMult = new JLabel("<html><b>Super Cell Multiplyer: </b>" + d.getSuperCellMult()/100 + "%</html>");
 		lineMult.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		JLabel lineCellRate = new JLabel("<html><b>Cell Cost: </b>" + d.getCellCost() + "c/t" + "</html>");
 		lineCellRate.setFont(new Font("Tahoma", Font.PLAIN, 14));
