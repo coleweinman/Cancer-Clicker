@@ -13,14 +13,13 @@ import Game.Operations.Operation;
 
 public class Game {
 
-	private static List<Character> characters = new ArrayList<Character>();
 	private static List<Operation> operations = new ArrayList<Operation>();
 	private static int cellRate = 0;
 	private static int moneyRate = 0;
-	private static int cells = 1000000;
+	private static int cells = 100000000;
 	private static int money = 0;
 	private static int superCell = 0;
-	private static int spaceCapacity = 0;
+	private static int capacity = 0;
 	private static int space = 0;
 	
 	public int CHARACTER = 0;
@@ -33,7 +32,6 @@ public class Game {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-		
 			calcCellRate();
 			calcMoneyRate();
 			calcSuperCell();
@@ -51,24 +49,26 @@ public class Game {
 	private static void increamentDisplay() {
 		Application.GameTab.setCells(cells);
 		Application.GameTab.setCellRate(cellRate);
-		Application.GameTab.setSpace(space,spaceCapacity);
+		Application.GameTab.setSpace(space,capacity);
 	}
 
 	private static void calcCellRate() {
 		int sum = 0;
-		for(Character c : characters)
-			sum += c.getCellRate();
-		for(Operation o : operations)
+		for(Operation o : operations) {
 			sum -= o.getCellCost();
+			for(Character c : o.getCharacters())
+				sum += c.getCellRate();
+		}
 		cellRate = sum;
 	}
 	
 	private static void calcMoneyRate() {
 		int sum = 0;
-		for(Character c : characters)
-			sum += c.getMoneyRate();
-		for(Operation o : operations)
-			sum -= o.getMoneyCost();
+		for(Operation o : operations) {
+			sum -= (o.getCellCost()*(o.getMoneyMult()+1));
+			for(Character c : o.getCharacters())
+				sum += c.getCellRate();
+		}
 		moneyRate = sum;
 	}
 	
@@ -77,14 +77,15 @@ public class Game {
 	}
 	
 	public static void calcSpace() {
-		int sum = 0;
-		for(Operation o : operations)
-			sum += o.getSpace();
-		spaceCapacity = sum;
-		sum = 0;
-		for(Character c : characters)
-			sum += c.getSpace();
-		space = sum;
+		int tSpace = 0;
+		int tCapacity = 0;
+		for(Operation o : operations) {
+			o.calcSpace();
+			tSpace += o.getSpace();
+			tCapacity += o.getCapacity();
+		}
+		space = tSpace;
+		capacity = tCapacity;
 	}
 	
 	public static void buy(String type, int cat) {
@@ -98,28 +99,16 @@ public class Game {
 			money -= p.getMoney();
 			superCell -= p.getSuperCell();
 			space += p.getSpace();
-			addType(type);
+			if(cat == 0)
+				fillSpot(getType(type));
+			if(cat == 1)
+				addOperation(type);
 		}
 	}
 	
-	public static boolean canBuy(Price p, int cat) {
-		if(cells >= p.getCells() && money >= p.getMoney() && superCell >= p.getSuperCell() && ((space + p.getSpace() <= spaceCapacity && cat == 0) || cat == 1))
-			return true;
-		else
-			return false;
-	}
-	
-	public static void addType(String t) {
-		switch(t) {
-			case "Brian": characters.add(new Brian()); break;
-			case "Garrett": characters.add(new Garrett()); break;
-			case "Noah": characters.add(new Noah()); break;
-			case "Andrew": characters.add(new Andrew()); break;
-			case "Daniel": characters.add(new Daniel()); break;
-			case "Amine": characters.add(new Amine()); break;
-			case "Chris": characters.add(new Chris()); break;
-			case "Tinky": characters.add(new Tinky()); break;
-			case "Box": operations.add(new Box()); break;
+	private static void addOperation(String t) {
+		switch(t) {	
+			case "Box": operations.add(new Box()); break; 
 			case "Garage": operations.add(new Garage()); break;
 			case "Office": operations.add(new Office()); break;
 			case "Cole": operations.add(new Cole()); break;
@@ -127,8 +116,46 @@ public class Game {
 			case "School": operations.add(new School()); break;
 		}
 	}
+
+	public static boolean canBuy(Price p, int cat) {
+		if(cells >= p.getCells() && money >= p.getMoney() && superCell >= p.getSuperCell() && ((canFit(p.getSpace())) || cat == 1))
+			return true;
+		else
+			return false;
+	}
+	
+	public static Character getType(String t) {
+		switch(t) {
+			case "Brian": return new Brian();
+			case "Garrett": return new Garrett();
+			case "Noah": return new Noah();
+			case "Andrew": return new Andrew();
+			case "Daniel": return new Daniel();
+			case "Amine": return new Amine();
+			case "Chris": return new Chris();
+			case "Tinky": return new Tinky();
+		}
+		return null;
+	}
 	
 	public static void addCell(int i) {
 		cells += i;
+	}
+	
+	public static boolean canFit(int s) {
+		for(Operation o : operations)
+			if(o.getSpace()+s <= o.getCapacity())
+				return true;
+		return false;
+		
+	}
+	
+	public static void fillSpot(Character c) {
+		for(Operation o : operations) {
+			if(canFit(c.getSpace()))
+				o.add(c);
+				calcSpace();
+				break;
+		}	
 	}
 }

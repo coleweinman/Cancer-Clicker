@@ -1,9 +1,15 @@
 package Game.Operations;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import Game.Characters.Character;
 import Main.Price;
 
 public class Operation {
-	private int spaceProvided = 0;
+	private List<Character> characters = new ArrayList<Character>();
+	private int space = 0;
+	private int capacity = 0;
 	private int cellRate = 0;
 	private int moneyRate = 0;
 	private int cellCost = 0;
@@ -27,7 +33,11 @@ public class Operation {
 	}
 	
 	public int getSpace() {
-		return spaceProvided;
+		return space;
+	}
+	
+	public int getCapacity() {
+		return capacity;
 	}
 	
 	public int getMoneyCost() {
@@ -67,7 +77,11 @@ public class Operation {
 	}
 	
 	public void setSpace(int s) {
-		spaceProvided = s;
+		space = s;
+	}
+	
+	public void setCapacity(int c) {
+		capacity = c;
 	}
 	
 	public void setMoneyCost(int c) {
@@ -96,6 +110,27 @@ public class Operation {
 	
 	public void setPrice(Price p) {
 		this.p = p;
+	}
+	
+	public void add(Character c) {
+		characters.add(c);
+		System.out.println("Before: " + space);
+		calcSpace();
+		System.out.println("After: " + space);
+		c.setCellMult(c.getCellMult()+cellMult);
+		c.setMoneyMult(c.getMoneyMult()+moneyMult);
+		c.setSuperCellMult(c.getSuperCellMult()+superCellMult);
+	}
+	
+	public void calcSpace() {
+		int sum = 0;
+		for(Character c : characters)
+			sum += c.getSpace();
+		space = sum;
+	}
+	
+	public List<Character> getCharacters() {
+		return characters;
 	}
 	
 }

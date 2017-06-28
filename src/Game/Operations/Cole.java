@@ -9,7 +9,7 @@ public class Cole extends Operation {
 		setPrice(OperationData.Cole.getPrice());
 		setCellCost(OperationData.Cole.getCellCost());
 		setMoneyCost(OperationData.Cole.getMoneyCost());
-		setSpace(OperationData.Cole.getSpace());
+		setCapacity(OperationData.Cole.getSpace());
 		setCellMult(OperationData.Cole.getCellMult());
 		setMoneyMult(OperationData.Cole.getMoneyMult());
 		setSuperCellMult(OperationData.Cole.getSuperCellMult());

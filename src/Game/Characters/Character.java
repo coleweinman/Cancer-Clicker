@@ -2,11 +2,13 @@ package Game.Characters;
 
 import Main.Price;
 
-public abstract class Character {
+public class Character {
 	
 	private String type = "";
 	private int cellRate = 0;
 	private int moneyRate = 0;
+	private double cellMult = 0;
+	private double moneyMult = 0;
 	private boolean puppet = false;
 	private double superCellMult = 0;
 	private int space = 0;
@@ -46,6 +48,14 @@ public abstract class Character {
 		return price;
 	}
 	
+	public double getCellMult() {
+		return cellMult;
+	}
+	
+	public double getMoneyMult() {
+		return moneyMult;
+	}
+	
 	public boolean isPuppet() {
 		return puppet;
 	}	
@@ -72,5 +82,13 @@ public abstract class Character {
 	
 	public void setSpace(int i) {
 		space = i;
+	}
+	
+	public void setCellMult(double m) {
+		cellMult = m;
+	}
+	
+	public void setMoneyMult(double m) {
+		moneyMult = m;
 	}
 }
