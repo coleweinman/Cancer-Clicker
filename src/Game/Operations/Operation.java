@@ -93,14 +93,20 @@ public class Operation {
 	}
 	
 	public void setSuperCellMult(double m) {
+		for(Character c : characters)
+			c.setSuperCellMult(c.getSuperCellMult()-superCellMult+m);
 		superCellMult = m;
 	}
 	
-	public void setCellMult(double c) {
-		cellMult = c;
+	public void setCellMult(double m) {
+		for(Character c : characters)
+			c.setCellMult(c.getCellMult()-cellMult+m);
+		cellMult = m;
 	}
 	
 	public void setMoneyMult(double m) {
+		for(Character c : characters)
+			c.setMoneyMult(c.getMoneyMult()-moneyMult+m);
 		moneyMult = m;
 	}
 	
@@ -114,19 +120,18 @@ public class Operation {
 	
 	public void add(Character c) {
 		characters.add(c);
-		System.out.println("Before: " + space);
 		calcSpace();
-		System.out.println("After: " + space);
 		c.setCellMult(c.getCellMult()+cellMult);
 		c.setMoneyMult(c.getMoneyMult()+moneyMult);
 		c.setSuperCellMult(c.getSuperCellMult()+superCellMult);
 	}
 	
 	public void calcSpace() {
-		int sum = 0;
-		for(Character c : characters)
-			sum += c.getSpace();
-		space = sum;
+		int tSpace = 0;
+		for(Character c : characters) {
+			tSpace += c.getSpace();
+		}
+		space = tSpace;
 	}
 	
 	public List<Character> getCharacters() {

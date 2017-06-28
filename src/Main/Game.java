@@ -56,8 +56,9 @@ public class Game {
 		int sum = 0;
 		for(Operation o : operations) {
 			sum -= o.getCellCost();
-			for(Character c : o.getCharacters())
-				sum += c.getCellRate();
+			for(Character c : o.getCharacters()) {
+				sum += c.getCellRate()*(c.getCellMult()+1);
+			}
 		}
 		cellRate = sum;
 	}
@@ -152,10 +153,11 @@ public class Game {
 	
 	public static void fillSpot(Character c) {
 		for(Operation o : operations) {
-			if(canFit(c.getSpace()))
+			if(o.getSpace()+c.getSpace() <= o.getCapacity()) {
 				o.add(c);
 				calcSpace();
 				break;
+			}
 		}	
 	}
 }
