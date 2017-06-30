@@ -94,4 +94,9 @@ public class GameTab extends JPanel {
 	public static void setSpace(int f, int c) {
 		disSpace.setText(f+"/"+c);
 	}
+	
+	public static void setSuperCell(int n) {
+		String s = (new ShortNumber(n, false)).toString();
+		disSuperCell.setText(s);
+	}
 }

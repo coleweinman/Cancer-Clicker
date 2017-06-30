@@ -1,6 +1,7 @@
 package Main;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import Game.CharacterData;
@@ -50,6 +51,7 @@ public class Game {
 		Application.GameTab.setCells(cells);
 		Application.GameTab.setCellRate(cellRate);
 		Application.GameTab.setSpace(space,capacity);
+		Application.GameTab.setSuperCell(superCell);
 	}
 
 	private static void calcCellRate() {
@@ -74,8 +76,18 @@ public class Game {
 	}
 	
 	public static void calcSuperCell() {
-		
-	}
+		double sum = 0;
+		Random rand = new Random();
+		for(Operation o : operations)
+			for(Character c : o.getCharacters())
+				sum += c.getSuperCellMult();
+		sum /= 1000;
+		System.out.println("Sum: " + sum);
+		double outcome = rand.nextDouble() * 1;
+		System.out.println(outcome);
+		if(outcome <= sum)
+			superCell++;
+	}			
 	
 	public static void calcSpace() {
 		int tSpace = 0;
