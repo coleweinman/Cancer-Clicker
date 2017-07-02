@@ -82,9 +82,7 @@ public class Game {
 			for(Character c : o.getCharacters())
 				sum += c.getSuperCellMult();
 		sum /= 1000;
-		System.out.println("Sum: " + sum);
 		double outcome = rand.nextDouble() * 1;
-		System.out.println(outcome);
 		if(outcome <= sum)
 			superCell++;
 	}			
@@ -118,7 +116,6 @@ public class Game {
 				addOperation(type);
 		}
 	}
-	
 	private static void addOperation(String t) {
 		switch(t) {	
 			case "Box": operations.add(new Box()); break; 
@@ -131,7 +128,7 @@ public class Game {
 	}
 
 	public static boolean canBuy(Price p, int cat) {
-		if(cells >= p.getCells() && money >= p.getMoney() && superCell >= p.getSuperCell() && ((canFit(p.getSpace())) || cat == 1))
+		if(cells >= p.getCells() && money >= p.getMoney() && superCell >= p.getSuperCell() && ((canFill(p.getSpace())) || cat == 1))
 			return true;
 		else
 			return false;
@@ -155,7 +152,7 @@ public class Game {
 		cells += i;
 	}
 	
-	public static boolean canFit(int s) {
+	public static boolean canFill(int s) {
 		for(Operation o : operations)
 			if(o.getSpace()+s <= o.getCapacity())
 				return true;

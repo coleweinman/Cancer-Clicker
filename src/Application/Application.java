@@ -8,6 +8,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JTabbedPane;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import java.awt.Insets;
 
@@ -20,6 +22,8 @@ import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.awt.event.ActionEvent;
 import java.awt.FlowLayout;
 import java.awt.TextArea;
@@ -32,14 +36,26 @@ public class Application extends JFrame {
 	private static JPanel contentPane = new JPanel();
 	public static JTabbedPane mainTabbedPane = new JTabbedPane(JTabbedPane.TOP);
 	private static JPanel tabGame = new GameTab();
-	private Action shiftAction = new ShiftAction();
-	private Action unshiftAction = new UnshiftAction();
 	private final JLabel lblTitle = new JLabel();
 	
 	public Application() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setBounds(100, 100, 500, 650);
-		this.setMinimumSize(new Dimension(300,300));
+		setMinimumSize(new Dimension(300,300));
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				int shouldClose = JOptionPane.showConfirmDialog(contentPane,
+						"Are you sure you want to exit Cancer Clicker?",
+						"Confirm close",
+						JOptionPane.YES_NO_OPTION);
+				if(shouldClose == JOptionPane.YES_OPTION) {
+					System.exit(0);
+				}
+			}
+		});
+		
+		
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);

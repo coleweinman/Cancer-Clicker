@@ -81,47 +81,15 @@ public class CellShopTab extends JPanel {
 		add(btnCreate, "cell 2 0 2 2,grow");
 		
 		//Buy Listeners
-		btnBuy[0].addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Game.buy("Brian", 0);
-			}
-		});
-		btnBuy[1].addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Game.buy("Garrett", 0);
-			}
-		});
-		btnBuy[2].addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Game.buy("Noah", 0);
-			}
-		});
-		btnBuy[3].addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Game.buy("Andrew", 0);
-			}
-		});
-		btnBuy[4].addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Game.buy("Daniel", 0);
-			}
-		});
-		btnBuy[5].addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Game.buy("Amine", 0);
-			}
-		});
-		btnBuy[6].addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Game.buy("Chris", 0);
-			}
-		});
-		btnBuy[7].addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Game.buy("Tinky", 0);
-			}
-		});
-		
+
+		btnBuy[0].addActionListener(event -> Game.buy("Brian", 0));
+		btnBuy[1].addActionListener(event -> Game.buy("Garrett", 0));
+		btnBuy[2].addActionListener(event -> Game.buy("Noah", 0));
+		btnBuy[3].addActionListener(event -> Game.buy("Andrew", 0));
+		btnBuy[4].addActionListener(event -> Game.buy("Daniel", 0));
+		btnBuy[5].addActionListener(event -> Game.buy("Amine", 0));
+		btnBuy[6].addActionListener(event -> Game.buy("Chris", 0));
+		btnBuy[7].addActionListener(event -> Game.buy("Tinky", 0));
 		
 		//Info Listeners
 		

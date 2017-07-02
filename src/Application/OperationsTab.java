@@ -57,37 +57,12 @@ public class OperationsTab extends JPanel {
 		add(btnBuy[5], "cell 2 3,grow");
 		
 		//Buy Listeners
-		btnBuy[0].addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Game.buy("Box", 1);
-			}
-		});
-		btnBuy[1].addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Game.buy("Garage", 1);
-			}
-		});
-		btnBuy[2].addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Game.buy("Office", 1);
-			}
-		});
-		btnBuy[3].addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Game.buy("Cole", 1);
-			}
-		});
-		btnBuy[4].addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Game.buy("Nhan", 1);
-			}
-		});
-		btnBuy[5].addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Game.buy("School", 1);
-			}
-		});
-		
+		btnBuy[0].addActionListener(event -> Game.buy("Box", 1));
+		btnBuy[1].addActionListener(event -> Game.buy("Garage", 1));
+		btnBuy[2].addActionListener(event -> Game.buy("Office", 1));
+		btnBuy[3].addActionListener(event -> Game.buy("Cole", 1));
+		btnBuy[4].addActionListener(event -> Game.buy("Nhan", 1));
+		btnBuy[5].addActionListener(event -> Game.buy("School", 1));		
 		
 		//Info Listeners
 		
@@ -132,15 +107,5 @@ public class OperationsTab extends JPanel {
 				Message.InfoPanelOperation info = new Message.InfoPanelOperation("School");
 			}
 		});
-	}
-	
-	public static void shift() {
-		for(JButton b : btnBuy)
-			b.setText("Info");
-	}
-	
-	public static void unshift() {
-		for(JButton b : btnBuy)
-			b.setText("Buy");
 	}
 }
