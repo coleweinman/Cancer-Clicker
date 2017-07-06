@@ -69,9 +69,9 @@ public class Application extends JFrame {
 		contentPane.add(mainTabbedPane, BorderLayout.CENTER);
 		
 		mainTabbedPane.addTab("Game", null, tabGame, null);
+		mainTabbedPane.addTab("Manage", tabManage);
 		JPanel tabSettings = new JPanel();
 		mainTabbedPane.addTab("Settings", null, tabSettings, null);
-		mainTabbedPane.addTab("Manage", tabManage);
 		
 		lblTitle.setFont(new Font("Tahoma", Font.BOLD, 30));
 		
