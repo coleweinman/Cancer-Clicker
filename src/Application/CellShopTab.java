@@ -6,6 +6,7 @@ import java.awt.Insets;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.KeyStroke;
 import javax.swing.SwingConstants;
 
@@ -80,16 +81,18 @@ public class CellShopTab extends JPanel {
 		btnCreate.setMargin(new Insets(1,1,1,1));
 		add(btnCreate, "cell 2 0 2 2,grow");
 		
+		add(OperationsList.getList(), "cell 2 2 2 2,grow");
+		
 		//Buy Listeners
 
-		btnBuy[0].addActionListener(event -> Game.buy("Brian", 0));
-		btnBuy[1].addActionListener(event -> Game.buy("Garrett", 0));
-		btnBuy[2].addActionListener(event -> Game.buy("Noah", 0));
-		btnBuy[3].addActionListener(event -> Game.buy("Andrew", 0));
-		btnBuy[4].addActionListener(event -> Game.buy("Daniel", 0));
-		btnBuy[5].addActionListener(event -> Game.buy("Amine", 0));
-		btnBuy[6].addActionListener(event -> Game.buy("Chris", 0));
-		btnBuy[7].addActionListener(event -> Game.buy("Tinky", 0));
+		btnBuy[0].addActionListener(event -> Game.buyCharacter(new Brian(), OperationsList.getSelected()));
+		btnBuy[1].addActionListener(event -> Game.buyCharacter(new Garrett(), OperationsList.getSelected()));
+		btnBuy[2].addActionListener(event -> Game.buyCharacter(new Noah(), OperationsList.getSelected()));
+		btnBuy[3].addActionListener(event -> Game.buyCharacter(new Andrew(), OperationsList.getSelected()));
+		btnBuy[4].addActionListener(event -> Game.buyCharacter(new Daniel(), OperationsList.getSelected()));
+		btnBuy[5].addActionListener(event -> Game.buyCharacter(new Amine(), OperationsList.getSelected()));
+		btnBuy[6].addActionListener(event -> Game.buyCharacter(new Chris(), OperationsList.getSelected()));
+		btnBuy[7].addActionListener(event -> Game.buyCharacter(new Tinky(), OperationsList.getSelected()));
 		
 		//Info Listeners
 		
@@ -148,16 +151,5 @@ public class CellShopTab extends JPanel {
 				Message.InfoPanelCharacter info = new Message.InfoPanelCharacter("Tinky");
 			}
 		});
-		
-	}
-	
-	public static void shift() {
-		for(JButton b : btnBuy)
-			b.setText("Info");
-	}
-	
-	public static void unshift() {
-		for(JButton b : btnBuy)
-			b.setText("Buy");
 	}
 }

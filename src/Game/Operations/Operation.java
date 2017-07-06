@@ -19,7 +19,16 @@ public class Operation {
 	private double moneyMult = 0;
 	private String type = "";
 	private Price p;
+	private String name = "";
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public Operation(String t) {
 		type = t;
 	}

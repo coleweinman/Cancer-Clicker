@@ -1,8 +1,6 @@
 package Application;
 
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -12,6 +10,7 @@ import javax.swing.JPanel;
 
 import Game.OperationData;
 import Game.ShortNumber;
+import Game.Operations.*;
 import Main.Game;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.SwingConstants;
@@ -57,12 +56,12 @@ public class OperationsTab extends JPanel {
 		add(btnBuy[5], "cell 2 3,grow");
 		
 		//Buy Listeners
-		btnBuy[0].addActionListener(event -> Game.buy("Box", 1));
-		btnBuy[1].addActionListener(event -> Game.buy("Garage", 1));
-		btnBuy[2].addActionListener(event -> Game.buy("Office", 1));
-		btnBuy[3].addActionListener(event -> Game.buy("Cole", 1));
-		btnBuy[4].addActionListener(event -> Game.buy("Nhan", 1));
-		btnBuy[5].addActionListener(event -> Game.buy("School", 1));		
+		btnBuy[0].addActionListener(event -> Game.buyOperation(new Box()));
+		btnBuy[1].addActionListener(event -> Game.buyOperation(new Garage()));
+		btnBuy[2].addActionListener(event -> Game.buyOperation(new Office()));
+		btnBuy[3].addActionListener(event -> Game.buyOperation(new Cole()));
+		btnBuy[4].addActionListener(event -> Game.buyOperation(new Nhan()));
+		btnBuy[5].addActionListener(event -> Game.buyOperation(new School()));		
 		
 		//Info Listeners
 		

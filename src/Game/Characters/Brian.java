@@ -9,6 +9,6 @@ public class Brian extends Character {
 		super("Brian");
 		setCellRate(CharacterData.Brian.getCellRate());
 		setPrice(CharacterData.Brian.getPrice());
-		setSpace(getPrice().getSpace());
+		setSpace(CharacterData.Brian.getSpace());
 	}
 }

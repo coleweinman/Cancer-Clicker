@@ -9,6 +9,6 @@ public class Amine extends Character {
 		super("Amine");
 		setCellRate(CharacterData.Amine.getCellRate());
 		setPrice(CharacterData.Amine.getPrice());
-		setSpace(getPrice().getSpace());
+		setSpace(CharacterData.Amine.getSpace());
 	}
 }

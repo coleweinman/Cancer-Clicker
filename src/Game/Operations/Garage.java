@@ -5,7 +5,7 @@ import Game.OperationData;
 public class Garage extends Operation {
 	
 	public Garage() {
-		super("Box");
+		super("Garage");
 		setPrice(OperationData.Garage.getPrice());
 		setCapacity(OperationData.Garage.getSpace());
 		setCellCost(OperationData.Garage.getCellCost());

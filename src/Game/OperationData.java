@@ -3,12 +3,12 @@ package Game;
 import Main.Price;
 
 public enum OperationData {
-	Box(new Price(50,0,0,0),0,0,0,0,0,1),
-	Garage(new Price(800,0,0,0),2,0,0,0,0,10),
-	Office(new Price(4000,0,0,0),5,0,0,0,0,80),
-	Cole(new Price(10000,0,0,0),200,0,0,0.2,0.2,150),
-	Nhan(new Price(100000,0,0,0),30,0,0.5,0,0,100),
-	School(new Price(500000,0,0,0),20,0,-0.3,-0.3,-0.3,500);
+	Box(new Price(50,0,0),0,0,0,0,0,1),
+	Garage(new Price(800,0,0),2,0,0,0,0,10),
+	Office(new Price(4000,0,0),5,0,0,0,0,80),
+	Cole(new Price(10000,0,0),200,0,0,0.2,0.2,150),
+	Nhan(new Price(100000,0,0),30,0,0.5,0,0,100),
+	School(new Price(500000,0,0),20,0,-0.3,-0.3,-0.3,500);
 	
 	private Price p;
 	private int cellCost;

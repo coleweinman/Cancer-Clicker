@@ -25,7 +25,7 @@ public class InfoPanelCharacter {
 		lineMoney.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		JLabel lineSC = new JLabel("<html><b>Super Cell Cost: </b>" + d.getPrice().getSuperCell() + "</html>");
 		lineSC.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		JLabel lineSpace = new JLabel("<html><b>Space: </b>" + d.getPrice().getSpace() + "</html>");
+		JLabel lineSpace = new JLabel("<html><b>Space: </b>" + d.getSpace() + "</html>");
 		lineSpace.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		JLabel lineMult = new JLabel("<html><b>Super Cell Multiplyer: </b>" + "+" + d.getSuperCellMult()/100 + "%</html>");
 		lineMult.setFont(new Font("Tahoma", Font.PLAIN, 14));

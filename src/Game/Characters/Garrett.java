@@ -9,7 +9,6 @@ public class Garrett extends Character {
 		super("Garrett");
 		setCellRate(CharacterData.Garrett.getCellRate());
 		setPrice(CharacterData.Garrett.getPrice());
-		setSpace(getPrice().getSpace());
-		setSpace(getPrice().getSpace());
+		setSpace(CharacterData.Garrett.getSpace());
 	}
 }

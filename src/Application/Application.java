@@ -5,6 +5,8 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import javax.swing.JTabbedPane;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
@@ -37,6 +39,7 @@ public class Application extends JFrame {
 	public static JTabbedPane mainTabbedPane = new JTabbedPane(JTabbedPane.TOP);
 	private static JPanel tabGame = new GameTab();
 	private final JLabel lblTitle = new JLabel();
+	private static JPanel tabManage = new ManageTab();
 	
 	public Application() {
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -66,10 +69,12 @@ public class Application extends JFrame {
 		contentPane.add(mainTabbedPane, BorderLayout.CENTER);
 		
 		mainTabbedPane.addTab("Game", null, tabGame, null);
-
 		JPanel tabSettings = new JPanel();
 		mainTabbedPane.addTab("Settings", null, tabSettings, null);
+		mainTabbedPane.addTab("Manage", tabManage);
+		
 		lblTitle.setFont(new Font("Tahoma", Font.BOLD, 30));
+		
 		
 		contentPane.add(lblTitle, BorderLayout.NORTH);
 		

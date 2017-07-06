@@ -39,7 +39,7 @@ public class GameTab extends JPanel {
 		
 		add(lblCells, "cell 2 0 2 1,alignx center,aligny center");
 		
-		add(sepTop, "cell 0 2 6 1");
+		add(sepTop, "cell 0 2 6 1,grow");
 		lblMoney.setFont(new Font("Tahoma", Font.BOLD, 20));
 		
 		add(lblMoney, "cell 0 3 2 1,alignx center,aligny center");
@@ -59,7 +59,7 @@ public class GameTab extends JPanel {
 		
 		add(disSpace, "cell 4 4 2 1,alignx center,aligny center");
 		
-		add(sepBottom, "cell 0 5 6 1");
+		add(sepBottom, "cell 0 5 6 1,grow");
 		lblSuperCells.setFont(new Font("Tahoma", Font.BOLD, 20));
 		
 		add(lblSuperCells, "cell 2 6 2 1,alignx center,aligny center");
