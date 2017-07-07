@@ -13,6 +13,24 @@ public class Character {
 	private double superCellMult = 0;
 	private int space = 0;
 	private static Price price;
+	private int cellCost = 0;
+	private int moneyCost = 0;
+
+	public int getCellCost() {
+		return cellCost;
+	}
+
+	public void setCellCost(int cellCost) {
+		this.cellCost = cellCost;
+	}
+
+	public int getMoneyCost() {
+		return moneyCost;
+	}
+
+	public void setMoneyCost(int moneyCost) {
+		this.moneyCost = moneyCost;
+	}
 
 	public Character(String t) {
 		type = t;

@@ -18,6 +18,7 @@ public class GameTab extends JPanel {
 	private JPanel tabCellShop = new CellShopTab();
 	private JPanel tabMoneyTab = new MoneyShopTab();
 	private JPanel tabPuppet = new PuppetTab();
+	private JPanel tabUpgrades = new UpgradesTab();
 	private JPanel tabOperations = new OperationsTab();
 	private final JLabel lblCells = new JLabel("Cells");
 	private final JLabel lblMoney = new JLabel("Money");

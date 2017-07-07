@@ -76,19 +76,7 @@ public class Application extends JFrame {
 		lblTitle.setFont(new Font("Tahoma", Font.BOLD, 30));
 		
 		
-		contentPane.add(lblTitle, BorderLayout.NORTH);
-		
-		
-		
-		//Key Bindings
-		
-		//Shift Action
-		//getRootPane().getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).put(KeyStroke.getKeyStroke("SHIFT"), "none");
-		//getRootPane().getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_Q, 0, false), "Info");
-		//getRootPane().getActionMap().put("Info", shiftAction);
-		//getRootPane().getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_Q, 0, true), "Buy");
-		//getRootPane().getActionMap().put("Buy", unshiftAction);
-		
+		contentPane.add(lblTitle, BorderLayout.NORTH);		
 	}
 	
 	public static JTabbedPane getTabbedPane() {

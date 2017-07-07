@@ -44,14 +44,14 @@ public class CellShopTab extends JPanel {
 			btnBuy[i].setFont(new Font("Tahoma", Font.BOLD, 14));
 		}
 		
-		lblInfo[0].setText("<html><center>Brian</center><center>" + new ShortNumber(CharacterData.Brian.getPrice().getCells(), true) + "</center></html>");
-		lblInfo[1].setText("<html><center>Garrett</center><center>" + new ShortNumber(CharacterData.Garrett.getPrice().getCells(), true) + "</center></html>");
-		lblInfo[2].setText("<html><center>Noah</center><center>" + new ShortNumber(CharacterData.Noah.getPrice().getCells(), true) + "</center></html>");
-		lblInfo[3].setText("<html><center>Andrew</center><center>" + new ShortNumber(CharacterData.Andrew.getPrice().getCells(), true) + "</center></html>");
-		lblInfo[4].setText("<html><center>Daniel</center><center>" + new ShortNumber(CharacterData.Daniel.getPrice().getCells(), true) + "</center></html>");
-		lblInfo[5].setText("<html><center>Amine</center><center>" + new ShortNumber(CharacterData.Amine.getPrice().getCells(), true) + "</center></html>");
-		lblInfo[6].setText("<html><center>Chris</center><center>" + new ShortNumber(CharacterData.Chris.getPrice().getCells(), true) + "</center></html>");
-		lblInfo[7].setText("<html><center>Tinky</center><center>" + new ShortNumber(CharacterData.Tinky.getPrice().getCells(), true) + "</center></html>");
+		lblInfo[0].setText("<html><center>Brian</center><center>" + new ShortNumber(CharacterData.Brian.getPrice().getCells(), true) + "c</center></html>");
+		lblInfo[1].setText("<html><center>Garrett</center><center>" + new ShortNumber(CharacterData.Garrett.getPrice().getCells(), true) + "c</center></html>");
+		lblInfo[2].setText("<html><center>Noah</center><center>" + new ShortNumber(CharacterData.Noah.getPrice().getCells(), true) + "c</center></html>");
+		lblInfo[3].setText("<html><center>Andrew</center><center>" + new ShortNumber(CharacterData.Andrew.getPrice().getCells(), true) + "c</center></html>");
+		lblInfo[4].setText("<html><center>Daniel</center><center>" + new ShortNumber(CharacterData.Daniel.getPrice().getCells(), true) + "c</center></html>");
+		lblInfo[5].setText("<html><center>Amine</center><center>" + new ShortNumber(CharacterData.Amine.getPrice().getCells(), true) + "c</center></html>");
+		lblInfo[6].setText("<html><center>Chris</center><center>" + new ShortNumber(CharacterData.Chris.getPrice().getCells(), true) + "c</center></html>");
+		lblInfo[7].setText("<html><center>Tinky</center><center>" + new ShortNumber(CharacterData.Tinky.getPrice().getCells(), true) + "c</center></html>");
 	
 		add(lblInfo[0], "cell 0 0,grow");
 		add(lblInfo[1], "cell 1 0,grow");
