@@ -11,9 +11,9 @@ import javax.swing.KeyStroke;
 import javax.swing.SwingConstants;
 
 import Game.CharacterData;
-import Game.ShortNumber;
 import Game.Characters.*;
 import Main.Game;
+import Main.ShortNumber;
 
 import javax.swing.Action;
 

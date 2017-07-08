@@ -9,9 +9,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import Game.OperationData;
-import Game.ShortNumber;
 import Game.Operations.*;
 import Main.Game;
+import Main.ShortNumber;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.SwingConstants;
 

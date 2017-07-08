@@ -9,7 +9,7 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
 
-import Game.ShortNumber;
+import Main.ShortNumber;
 
 import javax.swing.JButton;
 

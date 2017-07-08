@@ -1,4 +1,4 @@
-package Game;
+package Main;
 
 public class ShortNumber {
 	private long number;
