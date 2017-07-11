@@ -75,7 +75,6 @@ public class Application extends JFrame {
 		
 		lblTitle.setFont(new Font("Tahoma", Font.BOLD, 30));
 		
-		
 		contentPane.add(lblTitle, BorderLayout.NORTH);		
 	}
 	

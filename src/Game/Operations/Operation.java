@@ -33,6 +33,11 @@ public class Operation {
 		type = t;
 	}
 	
+	public Operation(String s, int i) {
+		type = s;
+		capacity = i;
+	}
+
 	public int getCellIncrease() {
 		return cellRate;
 	}

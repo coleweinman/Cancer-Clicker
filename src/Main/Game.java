@@ -4,14 +4,10 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-import javax.swing.JOptionPane;
-
 import Application.OperationsList;
 import Game.CharacterData;
 import Game.OperationData;
-import Game.Characters.*;
 import Game.Characters.Character;
-import Game.Characters.Garrett;
 import Game.Operations.*;
 import Game.Operations.Operation;
 
@@ -31,6 +27,7 @@ public class Game {
 	
 	public static void start() {
 		Application.OperationsList.initializeList();
+		Save.load();
 		operations.add(new Box());
 		OperationsList.update();
 		while(true) {
