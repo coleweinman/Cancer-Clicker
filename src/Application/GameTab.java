@@ -100,4 +100,8 @@ public class GameTab extends JPanel {
 		String s = (new ShortNumber(n, false)).toString();
 		disSuperCell.setText(s);
 	}
+	
+	public static void setMoney(double m) {
+		disMoney.setText(String.format("$%,.2f%n", m));
+	}
 }

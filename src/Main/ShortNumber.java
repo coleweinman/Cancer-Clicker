@@ -3,11 +3,21 @@ package Main;
 public class ShortNumber {
 	private long number;
 	private boolean really;
+	private boolean doub;
 	private String s = "";
+	private double real;
 	
 	public ShortNumber(long n, boolean b) {
 		number = n;
 		really = b;
+		doub = false;
+	}
+	
+	public ShortNumber(double d) {
+		real = d;
+		number = new Double(d).intValue();
+		really = false;
+		doub = true;
 	}
 	
 	public long getShort() {
@@ -27,6 +37,8 @@ public class ShortNumber {
 	}
 	
 	public String toString() {
-		return String.format("%,d", new Long(getShort())) + s; 
+		if(!doub)
+			return String.format("%,d", new Long(getShort())) + s; 
+		return String.format("%,d", new Long(getShort())) + new Double(real-number).toString().substring(1) + s;
 	}
 }

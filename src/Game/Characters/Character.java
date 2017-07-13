@@ -1,5 +1,6 @@
 package Game.Characters;
 
+import Game.Operations.Operation;
 import Main.Price;
 
 public class Character {
@@ -15,6 +16,20 @@ public class Character {
 	private static Price price;
 	private int cellCost = 0;
 	private int moneyCost = 0;
+	private Operation operation;
+	
+	public Operation getOperation() {
+		return operation;
+	}
+
+	public void setOperation(Operation o) {
+		operation = o;
+		o.add(this);
+	}
+
+	public void action() {
+		
+	}
 
 	public int getCellCost() {
 		return cellCost;

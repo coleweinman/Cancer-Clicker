@@ -10,6 +10,7 @@ import Game.OperationData;
 import Game.Characters.Character;
 import Game.Operations.*;
 import Game.Operations.Operation;
+import Message.InfoPanelCharacter;
 
 public class Game {
 
@@ -17,13 +18,11 @@ public class Game {
 	private static int cellRate = 0;
 	private static int moneyRate = 0;
 	private static int cells = 0;
-	private static int money = 0;
+	private static double money = 0;
 	private static int superCell = 0;
 	private static int capacity = 0;
 	private static int space = 0;
-	
-	public int CHARACTER = 0;
-	public int OPERATION = 1;
+	private static int time = 0;
 	
 	public static void start() {
 		Application.OperationsList.initializeList();
@@ -33,9 +32,13 @@ public class Game {
 		while(true) {
 			try {
 				TimeUnit.MILLISECONDS.sleep(100);
+				time++;
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+			if(time == 20)
+				InfoPanelCharacter.startList();
+			action();
 			calcCellRate();
 			calcMoneyRate();
 			calcSuperCell();
@@ -45,9 +48,15 @@ public class Game {
 		}
 	}
 
+	private static void action() {
+		for(Operation o : operations)
+			for(Character c : o.getCharacters())
+				c.action();
+	}
+
 	private static void addValues() {
 		cells += cellRate;
-		money += money;
+		money += moneyRate;
 	}
 
 	private static void increamentDisplay() {
@@ -55,6 +64,7 @@ public class Game {
 		Application.GameTab.setCellRate(cellRate);
 		Application.GameTab.setSpace(space,capacity);
 		Application.GameTab.setSuperCell(superCell);
+		Application.GameTab.setMoney(money);
 	}
 
 	private static void calcCellRate() {
@@ -109,7 +119,7 @@ public class Game {
 				cells -= p.getCells();
 				money -= p.getMoney();
 				superCell -= p.getSuperCell();
-				o.add(c);
+				c.setOperation(o);
 				calcSpace();
 				OperationsList.update();
 			} else if(canBuy(p) && capacity-space >= c.getSpace()) {
@@ -117,6 +127,7 @@ public class Game {
 			}
 		}
 	}
+	
 	public static void buyOperation(Operation o) {
 		Price p;
 		p = OperationData.valueOf(o.getType()).getPrice();
@@ -141,5 +152,13 @@ public class Game {
 	
 	public static List<Operation> getOperations() {
 		return operations;
+	}
+
+	public static void convert(int i) {
+		if(canBuy(new Price(i,0,0))) {
+			money += (double)i/100;
+			cells -= i;
+		}
+			
 	}
 }

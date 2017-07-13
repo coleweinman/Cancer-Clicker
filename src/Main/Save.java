@@ -15,7 +15,7 @@ public class Save {
 	
 	public static ArrayList<Operation> load() {
 		ArrayList<Operation> operations = new ArrayList<Operation>();
-		
+		System.out.println("hey");
 		try {
 			FileInputStream file = new FileInputStream(new File("save.cancer"));
 			ObjectInputStream load = new ObjectInputStream(file);

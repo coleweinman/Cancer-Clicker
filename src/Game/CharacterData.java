@@ -17,9 +17,9 @@ public enum CharacterData {
 	Nhan(new Price(0,100,1),0,0,0,0,0,3),
 	Alex(new Price(0,1000,5),0,0,0,0,0,20),
 	BP(new Price(0,600,10),0,0,0,0,0,20),
-	Pateron(new Price(0,400,0),0,1,0,200,0,10),
+	Patreon(new Price(0,400,0),0,1,0,200,0,10),
 	Apple(new Price(0,5000,10),40,5,0.4,0,0,200),
-	Trump(new Price(20,0,0),0,0,0,0,0,1);
+	Trump(new Price(0,10000,0),0,0,0,0,0,1);
 	
 	private Price p;
 	private int cellRate;
