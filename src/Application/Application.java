@@ -1,36 +1,18 @@
 package Application;
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
+import Main.Save;
+
 import javax.swing.JTabbedPane;
-import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
-import java.awt.Insets;
-
-import javax.swing.Action;
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.JSeparator;
-import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.event.ActionListener;
-import java.awt.event.InputEvent;
-import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.awt.event.ActionEvent;
-import java.awt.FlowLayout;
-import java.awt.TextArea;
-import javax.swing.JTextPane;
-import javax.swing.KeyStroke;
 import javax.swing.SwingConstants;
 
 public class Application extends JFrame {
@@ -53,11 +35,11 @@ public class Application extends JFrame {
 						"Confirm close",
 						JOptionPane.YES_NO_OPTION);
 				if(shouldClose == JOptionPane.YES_OPTION) {
+					Save.save();
 					System.exit(0);
 				}
 			}
 		});
-		
 		
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -75,11 +57,11 @@ public class Application extends JFrame {
 		
 		lblTitle.setFont(new Font("Tahoma", Font.BOLD, 30));
 		
-		contentPane.add(lblTitle, BorderLayout.NORTH);		
+		contentPane.add(lblTitle, BorderLayout.NORTH);
+
 	}
 	
 	public static JTabbedPane getTabbedPane() {
 		return mainTabbedPane;
 	}
-
 }

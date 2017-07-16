@@ -12,6 +12,8 @@ import javax.swing.SwingConstants;
 import Main.ShortNumber;
 
 import javax.swing.JButton;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeEvent;
 
 public class GameTab extends JPanel {
 	private JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
@@ -38,7 +40,7 @@ public class GameTab extends JPanel {
 		setLayout(new MigLayout("insets 0 0 0 0", "[grow][grow][grow][grow][grow][grow]", "[grow][grow][][grow][grow][][grow][][][][grow][][grow][grow]"));
 		lblCells.setFont(new Font("Tahoma", Font.BOLD, 30));
 		
-		add(lblCells, "cell 2 0 2 1,alignx center,aligny center");
+		add(lblCells, "cell 0 0 6 1,alignx center,aligny center");
 		
 		add(sepTop, "cell 0 2 6 1,grow");
 		lblMoney.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -62,19 +64,17 @@ public class GameTab extends JPanel {
 		
 		add(sepBottom, "cell 0 5 6 1,grow");
 		lblSuperCells.setFont(new Font("Tahoma", Font.BOLD, 20));
-		
 		add(lblSuperCells, "cell 2 6 2 1,alignx center,aligny center");
 		disSuperCell.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		
 		add(disSuperCell, "cell 2 7 2 1,alignx center,aligny center");
-		
 		add(tabbedPane, "cell 0 8 6 6,grow");
 		
 		tabbedPane.addTab("Cell Shop", tabCellShop);
 		
 		tabbedPane.addTab("Operations", tabOperations);
-
-		tabbedPane.addTab("Money Shop", tabMoneyTab);
+		
+				tabbedPane.addTab("Money Shop", tabMoneyTab);
 		
 		tabbedPane.addTab("Puppet Panel", tabPuppet);
 		

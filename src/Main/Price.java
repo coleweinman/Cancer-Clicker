@@ -1,6 +1,9 @@
 package Main;
 
-public class Price {
+import java.io.Serializable;
+
+public class Price implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private int cells;
 	private int money;
 	private int superCell;

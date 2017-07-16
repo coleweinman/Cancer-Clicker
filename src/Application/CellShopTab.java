@@ -6,8 +6,6 @@ import java.awt.Insets;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.KeyStroke;
 import javax.swing.SwingConstants;
 
 import Game.CharacterData;
@@ -15,13 +13,13 @@ import Game.Characters.*;
 import Main.Game;
 import Main.ShortNumber;
 
-import javax.swing.Action;
-
 import net.miginfocom.swing.MigLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 
 
 
@@ -29,8 +27,9 @@ public class CellShopTab extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private static JButton[] btnBuy = new JButton[8];
 	private static JLabel[] lblInfo = new JLabel[8];
+	OperationsList list = new OperationsList();
 
-	public CellShopTab() {
+	public CellShopTab() {		
 		setLayout(new MigLayout("insets 0 0 0 0", "[grow][grow][grow][grow][grow][grow]", "[grow][grow][grow][grow]"));
 
 		for(int i = 0; i < lblInfo.length; i++) {
@@ -43,6 +42,8 @@ public class CellShopTab extends JPanel {
 			btnBuy[i] = new JButton("Buy");
 			btnBuy[i].setFont(new Font("Tahoma", Font.BOLD, 14));
 		}
+		
+		add(list.getList(), "cell 2 2 2 2,grow");
 		
 		lblInfo[0].setText("<html><center>Brian</center><center>" + new ShortNumber(CharacterData.Brian.getPrice().getCells(), true) + "c</center></html>");
 		lblInfo[1].setText("<html><center>Garrett</center><center>" + new ShortNumber(CharacterData.Garrett.getPrice().getCells(), true) + "c</center></html>");
@@ -81,18 +82,18 @@ public class CellShopTab extends JPanel {
 		btnCreate.setMargin(new Insets(1,1,1,1));
 		add(btnCreate, "cell 2 0 2 2,grow");
 		
-		add(OperationsList.getList(), "cell 2 2 2 2,grow");
+		
 		
 		//Buy Listeners
 
-		btnBuy[0].addActionListener(event -> Game.buyCharacter(new Brian(), OperationsList.getSelected()));
-		btnBuy[1].addActionListener(event -> Game.buyCharacter(new Garrett(), OperationsList.getSelected()));
-		btnBuy[2].addActionListener(event -> Game.buyCharacter(new Noah(), OperationsList.getSelected()));
-		btnBuy[3].addActionListener(event -> Game.buyCharacter(new Andrew(), OperationsList.getSelected()));
-		btnBuy[4].addActionListener(event -> Game.buyCharacter(new Daniel(), OperationsList.getSelected()));
-		btnBuy[5].addActionListener(event -> Game.buyCharacter(new Amine(), OperationsList.getSelected()));
-		btnBuy[6].addActionListener(event -> Game.buyCharacter(new Chris(), OperationsList.getSelected()));
-		btnBuy[7].addActionListener(event -> Game.buyCharacter(new Tinky(), OperationsList.getSelected()));
+		btnBuy[0].addActionListener(event -> Game.buyCharacter(new Brian(), list.getSelected()));
+		btnBuy[1].addActionListener(event -> Game.buyCharacter(new Garrett(), list.getSelected()));
+		btnBuy[2].addActionListener(event -> Game.buyCharacter(new Noah(), list.getSelected()));
+		btnBuy[3].addActionListener(event -> Game.buyCharacter(new Andrew(), list.getSelected()));
+		btnBuy[4].addActionListener(event -> Game.buyCharacter(new Daniel(), list.getSelected()));
+		btnBuy[5].addActionListener(event -> Game.buyCharacter(new Amine(), list.getSelected()));
+		btnBuy[6].addActionListener(event -> Game.buyCharacter(new Chris(), list.getSelected()));
+		btnBuy[7].addActionListener(event -> Game.buyCharacter(new Tinky(), list.getSelected()));
 		
 		//Info Listeners
 		

@@ -39,4 +39,6 @@ public class InfoPanelCharacter {
 		JDialog dialog = optionPane.createDialog(frame, name);
 		dialog.setVisible(true);
 	}
+	public static void startList() {
+	}
 }

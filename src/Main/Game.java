@@ -19,16 +19,21 @@ public class Game {
 	private static int moneyRate = 0;
 	private static int cells = 0;
 	private static double money = 0;
-	private static int superCell = 0;
+	private static int superCells = 0;
 	private static int capacity = 0;
 	private static int space = 0;
 	private static int time = 0;
+	private static boolean cheats = false;
 	
 	public static void start() {
-		Application.OperationsList.initializeList();
 		Save.load();
-		operations.add(new Box());
-		OperationsList.update();
+		if(cheats) {
+			cells = 10000;
+			money = 10000.44;
+			superCells = 10;
+		}
+		if(operations.isEmpty())
+			operations.add(new Box());
 		while(true) {
 			try {
 				TimeUnit.MILLISECONDS.sleep(100);
@@ -63,7 +68,7 @@ public class Game {
 		Application.GameTab.setCells(cells);
 		Application.GameTab.setCellRate(cellRate);
 		Application.GameTab.setSpace(space,capacity);
-		Application.GameTab.setSuperCell(superCell);
+		Application.GameTab.setSuperCell(superCells);
 		Application.GameTab.setMoney(money);
 	}
 
@@ -81,9 +86,9 @@ public class Game {
 	private static void calcMoneyRate() {
 		int sum = 0;
 		for(Operation o : operations) {
-			sum -= (o.getCellCost()*(o.getMoneyMult()+1));
+			sum -= (o.getMoneyCost()*(o.getMoneyMult()+1));
 			for(Character c : o.getCharacters())
-				sum += c.getCellRate();
+				sum += c.getMoneyRate();
 		}
 		moneyRate = sum;
 	}
@@ -97,7 +102,7 @@ public class Game {
 		sum /= 1000;
 		double outcome = rand.nextDouble() * 1;
 		if(outcome <= sum)
-			superCell++;
+			superCells++;
 	}			
 	
 	public static void calcSpace() {
@@ -118,7 +123,7 @@ public class Game {
 			if(canBuy(p) && o.getSpace() + c.getSpace() <= o.getCapacity()) {
 				cells -= p.getCells();
 				money -= p.getMoney();
-				superCell -= p.getSuperCell();
+				superCells -= p.getSuperCell();
 				c.setOperation(o);
 				calcSpace();
 				OperationsList.update();
@@ -134,14 +139,14 @@ public class Game {
 		if(canBuy(p)) {
 			cells -= p.getCells();
 			money -= p.getMoney();
-			superCell -= p.getSuperCell();
+			superCells -= p.getSuperCell();
 			operations.add(o);
 			OperationsList.update();
 		}
 	}
 
 	public static boolean canBuy(Price p) {
-		if(cells >= p.getCells() && money >= p.getMoney() && superCell >= p.getSuperCell())
+		if(cells >= p.getCells() && money >= p.getMoney() && superCells >= p.getSuperCell())
 			return true;
 		return false;
 	}
@@ -160,5 +165,28 @@ public class Game {
 			cells -= i;
 		}
 			
+	}
+	
+	public static int getTime() {
+		return time;
+	}
+
+	public static void setStats(int c, double m, int sc, ArrayList<Operation> o) {
+		cells = c;
+		money = m;
+		superCells = sc;
+		operations = o;
+	}
+	
+	public static int getCells() {
+		return cells;
+	}
+	
+	public static double getMoney() {
+		return money;
+	}
+	
+	public static int getSuperCells() {
+		return superCells;
 	}
 }

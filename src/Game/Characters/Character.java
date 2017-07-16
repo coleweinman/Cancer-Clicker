@@ -1,10 +1,12 @@
 package Game.Characters;
 
+import java.io.Serializable;
+
 import Game.Operations.Operation;
 import Main.Price;
 
-public class Character {
-	
+public class Character implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private String type = "";
 	private int cellRate = 0;
 	private int moneyRate = 0;

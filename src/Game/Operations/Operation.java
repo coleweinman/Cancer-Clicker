@@ -1,12 +1,14 @@
 package Game.Operations;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import Game.Characters.Character;
 import Main.Price;
 
-public class Operation {
+public class Operation implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private List<Character> characters = new ArrayList<Character>();
 	private int space = 0;
 	private int capacity = 0;

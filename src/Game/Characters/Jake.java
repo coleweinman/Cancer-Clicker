@@ -1,6 +1,7 @@
 package Game.Characters;
 
 import Game.CharacterData;
+import Game.Operations.Operation;
 import Main.Price;
 
 public class Jake extends Character {
@@ -12,7 +13,8 @@ public class Jake extends Character {
 	}
 	
 	@Override
-	public void action() {
-		getOperation().setCellCost(0);
+	public void setOperation(Operation o) {
+		super.setOperation(o);
+		o.setCellCost(0);
 	}
 }
