@@ -41,8 +41,8 @@ public class Game {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			if(time == 20)
-				InfoPanelCharacter.startList();
+			//if(time == 20)
+				//InfoPanelCharacter.startList();
 			action();
 			calcCellRate();
 			calcMoneyRate();
